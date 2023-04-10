@@ -50,7 +50,7 @@ export const Layout = (props) => {
             sx={{ mb: 1 }}
             variant="h4"
           >
-            Welcome to Devias Kit PRO
+            Welcome to BerkBook
           </Typography>
           <Typography
             color="text.secondary"
@@ -141,7 +141,7 @@ export const Layout = (props) => {
                   }
                 }}
               >
-                Devias Kit <span>PRO</span>
+                BerkBook
               </Box>
             </Stack>
           </Box>

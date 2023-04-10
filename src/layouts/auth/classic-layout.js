@@ -70,7 +70,7 @@ export const Layout = (props) => {
                   }
                 }}
               >
-                Devias Kit <span>PRO</span>
+                BerkBook
               </Box>
             </Stack>
           </Stack>

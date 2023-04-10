@@ -25,52 +25,8 @@ export const AuthIssuer = (props) => {
         p: 3
       }}
     >
-      <Typography variant="body2">
-        Visit our
-        {' '}
-        <Link
-          component="a"
-          href={paths.docs}
-          target="_blank"
-          underline="hover"
-          variant="subtitle2"
-        >
-          docs
-        </Link>
-        {' '}
-        and find out how to switch between
-      </Typography>
-      <Stack
-        alignItems="center"
-        direction="row"
-        gap={3}
-        sx={{ mt: 2 }}
-      >
-        {Object.keys(issuers).map((issuer) => {
-          const isCurrent = issuer === currentIssuer;
-          const icon = issuers[issuer];
 
-          return (
-            <Tooltip
-              key={issuer}
-              title={issuer}
-            >
-              <Box
-                component="img"
-                src={icon}
-                sx={{
-                  height: 30,
-                  '&:not(:hover)': {
-                    ...(!isCurrent && {
-                      filter: 'grayscale(100%)'
-                    })
-                  }
-                }}
-              />
-            </Tooltip>
-          );
-        })}
-      </Stack>
+
     </Box>
   );
 };

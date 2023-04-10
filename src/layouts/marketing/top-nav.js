@@ -131,7 +131,7 @@ export const TopNav = (props) => {
                     }
                   }}
                 >
-                  Devias Kit <span>PRO</span>
+                  BerkBook
                 </Box>
               )}
             </Stack>

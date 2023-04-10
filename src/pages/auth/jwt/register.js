@@ -82,6 +82,7 @@ const Page = () => {
 
   return (
     <>
+
       <Seo title="Register" />
       <div>
         <Card elevation={16}>
@@ -168,6 +169,33 @@ const Page = () => {
                     component="a"
                     href="#"
                   >
+                    Privacy Policy
+                  </Link>
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                  ml: -1,
+                  mt: 1
+                }}
+              >
+                <Checkbox
+                  checked={formik.values.policy}
+                  name="policy"
+                  onChange={formik.handleChange}
+                />
+                <Typography
+                  color="text.secondary"
+                  variant="body2"
+                >
+                  I have read the
+                  {' '}
+                  <Link
+                    component="a"
+                    href="#"
+                  >
                     Terms and Conditions
                   </Link>
                 </Typography>
@@ -198,9 +226,7 @@ const Page = () => {
             </form>
           </CardContent>
         </Card>
-        <Box sx={{ mt: 3 }}>
-          <AuthIssuer issuer={issuer} />
-        </Box>
+
       </div>
     </>
   );
