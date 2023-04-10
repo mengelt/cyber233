@@ -21,10 +21,6 @@ export const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET
 };
 
-export const gtmConfig = {
-  containerId: process.env.REACT_APP_GTM_CONTAINER_ID
-};
-
 export const mapboxConfig = {
   apiKey: process.env.REACT_APP_MAPBOX_API_KEY
 };

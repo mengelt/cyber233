@@ -12,7 +12,7 @@ import { SettingsDrawer } from './components/settings/settings-drawer';
 import { Toaster } from './components/toaster';
 import { SettingsConsumer, SettingsProvider } from './contexts/settings-context';
 import { AuthConsumer, AuthProvider } from './contexts/auth/jwt-context';
-import { gtmConfig } from './config';
+
 import { useNprogress } from './hooks/use-nprogress';
 import { useAnalytics } from './hooks/use-analytics';
 import { routes } from './routes';
@@ -30,7 +30,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './locales/i18n';
 
 export const App = () => {
-  useAnalytics(gtmConfig);
+  
   useNprogress();
 
   const element = useRoutes(routes);
