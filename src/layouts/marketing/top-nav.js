@@ -4,7 +4,7 @@ import Menu01Icon from '@untitled-ui/icons-react/build/esm/Menu01';
 import {
   Box,
   Button,
-  Chip,
+  Link,
   Container,
   IconButton,
   Stack,
@@ -17,28 +17,24 @@ import { RouterLink } from 'src/components/router-link';
 import { usePathname } from 'src/hooks/use-pathname';
 import { useWindowScroll } from 'src/hooks/use-window-scroll';
 import { paths } from 'src/paths';
-import { PagesPopover } from './pages-popover';
 import { TopNavItem } from './top-nav-item';
+import { useRouter } from 'src/hooks/use-router';
 
 const items = [
   {
-    title: 'Components',
-    path: paths.components.index
+    title: 'Privacy Features',
+    path: paths.features.index
   },
   {
-    title: 'Pages',
-    popover: <PagesPopover />
-  },
-  {
-    title: 'Docs',
-    path: paths.docs,
-    external: true
+    title: 'Sign In',
+    path: paths.auth.jwt.login
   }
 ];
 
 const TOP_NAV_HEIGHT = 64;
 
 export const TopNav = (props) => {
+  const router = useRouter();
   const { onMobileNavOpen } = props;
   const pathname = usePathname();
   const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
@@ -58,6 +54,10 @@ export const TopNav = (props) => {
     handler: handleWindowScroll,
     delay
   });
+
+  const handleRegister = () => {
+    router.push(paths.auth.jwt.register);
+  }
 
   return (
     <Box
@@ -135,10 +135,7 @@ export const TopNav = (props) => {
                 </Box>
               )}
             </Stack>
-            <Chip
-              label="v6.1.0"
-              size="small"
-            />
+
           </Stack>
           {mdUp && (
             <Stack
@@ -196,12 +193,14 @@ export const TopNav = (props) => {
             <Button
               component="a"
               size={mdUp ? 'medium' : 'small'}
-              href="https://mui.com/store/items/devias-kit-pro"
-              target="_blank"
+              
+              onClick={handleRegister}
               variant="contained"
             >
-              Purchase Now
+              Register
             </Button>
+
+
             {!mdUp && (
               <IconButton onClick={onMobileNavOpen}>
                 <SvgIcon fontSize="small">

@@ -47,6 +47,9 @@ export const paths = {
       modern: '/auth-demo/verify-code/modern'
     }
   },
+  features: {
+    index: '/features',
+  },
   dashboard: {
     index: '/dashboard',
     academy: {

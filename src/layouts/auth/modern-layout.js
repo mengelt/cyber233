@@ -56,7 +56,7 @@ export const Layout = (props) => {
             color="text.secondary"
             sx={{ mb: 4 }}
           >
-            A professional kit that comes with ready-to-use MUI components developed with one common goal in mind, help you build faster & beautiful applications.
+            A privacy-first social network that puts you first -- well, second. Privacy is first, remember?
           </Typography>
           <Typography
             variant="subtitle2"

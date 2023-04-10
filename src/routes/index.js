@@ -6,6 +6,7 @@ import Error404Page from 'src/pages/404';
 import Error500Page from 'src/pages/500';
 import ContactPage from 'src/pages/contact';
 import CheckoutPage from 'src/pages/checkout';
+import FeaturesPage from 'src/pages/features';
 import PricingPage from 'src/pages/pricing';
 import { authRoutes } from './auth';
 import { authDemoRoutes } from './auth-demo';
@@ -34,6 +35,10 @@ export const routes = [
   ...authRoutes,
   ...authDemoRoutes,
   ...dashboardRoutes,
+  {
+    path: 'features',
+    element: <FeaturesPage />
+  },
   {
     path: 'checkout',
     element: <CheckoutPage />

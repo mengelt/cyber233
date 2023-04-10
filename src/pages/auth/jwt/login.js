@@ -21,10 +21,18 @@ import { paths } from 'src/paths';
 import { AuthIssuer } from 'src/sections/auth/auth-issuer';
 
 const initialValues = {
+  email: '',
+  password: '',
+  submit: null
+};
+
+/*
+const initialValues = {
   email: 'demo@devias.io',
   password: 'Password123!',
   submit: null
 };
+*/
 
 const validationSchema = Yup.object({
   email: Yup
@@ -143,6 +151,7 @@ const Page = () => {
             </form>
           </CardContent>
         </Card>
+        {/*
         <Stack
           spacing={3}
           sx={{ mt: 3 }}
@@ -154,6 +163,7 @@ const Page = () => {
           </Alert>
           <AuthIssuer issuer={issuer} />
         </Stack>
+              */}
       </div>
     </>
   );

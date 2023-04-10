@@ -16,7 +16,15 @@ const sections = [
     title: 'Menu',
     items: [
       {
-        title: 'Browse Components',
+        title: 'Register',
+        path: paths.components.index
+      },
+      {
+        title: 'Sign In',
+        path: paths.components.index
+      },
+      {
+        title: 'Privacy Features',
         path: paths.components.index
       },
       {
@@ -30,28 +38,15 @@ const sections = [
     title: 'Legal',
     items: [
       {
+        title: 'Privacy Policy',
+        path: '#'
+      },
+      {
         title: 'Terms & Conditions',
         path: '#'
       },
       {
-        title: 'License',
-        path: '#'
-      },
-      {
         title: 'Contact',
-        path: '#'
-      }
-    ]
-  },
-  {
-    title: 'Social',
-    items: [
-      {
-        title: 'Instagram',
-        path: '#'
-      },
-      {
-        title: 'LinkedIn',
         path: '#'
       }
     ]
@@ -129,7 +124,7 @@ export const Footer = (props) => (
               color="text.secondary"
               variant="caption"
             >
-              © 2022 Devias IO
+              © 2023 Jujhar, Saleena, and Mark
             </Typography>
           </Stack>
         </Grid>
