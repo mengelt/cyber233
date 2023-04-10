@@ -29,6 +29,7 @@ export const tokens = {
     finance: 'nav.finance',
     fleet: 'nav.fleet',
     forgotPassword: 'nav.forgotPassword',
+    friends: 'nav.friends',
     invoiceList: 'nav.invoices',
     jobList: 'nav.jobList',
     kanban: 'nav.kanban',

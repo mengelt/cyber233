@@ -4,6 +4,8 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard';
 
 const IndexPage = lazy(() => import('src/pages/dashboard/index'));
 
+const SocialDashboardPage = lazy(() => import('src/pages/dashboard/social/feed'));
+
 // Academy
 const AcademyDashboardPage = lazy(() => import('src/pages/dashboard/academy/dashboard'));
 const AcademyCoursePage = lazy(() => import('src/pages/dashboard/academy/course'));
@@ -45,7 +47,7 @@ const SocialProfilePage = lazy(() => import('src/pages/dashboard/social/profile'
 
 // Other
 const AccountPage = lazy(() => import('src/pages/dashboard/account'));
-const AnalyticsPage = lazy(() => import('src/pages/dashboard/analytics'));
+const AnalyticsPage = lazy(() => import('src/pages/dashboard/feed'));
 const BlankPage = lazy(() => import('src/pages/dashboard/blank'));
 const CalendarPage = lazy(() => import('src/pages/dashboard/calendar'));
 const ChatPage = lazy(() => import('src/pages/dashboard/chat'));
@@ -70,6 +72,16 @@ export const dashboardRoutes = [
         index: true,
         element: <IndexPage />
       },
+      {
+        path: 'social',
+        children: [
+          {
+            index: true,
+            element: <SocialDashboardPage />
+          },
+        ]
+      },
+      
       {
         path: 'academy',
         children: [

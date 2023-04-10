@@ -2,7 +2,8 @@ export const paths = {
   index: '/',
   checkout: '/checkout',
   contact: '/contact',
-  pricing: '/pricing',
+  pricing: '/pricing',  
+  friends: '/friends',
   auth: {
     auth0: {
       callback: '/auth/auth0/callback',
@@ -69,6 +70,7 @@ export const paths = {
       edit: '/dashboard/customers/:customerId/edit'
     },
     ecommerce: '/dashboard/ecommerce',
+    feed: '/dashboard/feed',
     fileManager: '/dashboard/file-manager',
     invoices: {
       index: '/dashboard/invoices',
@@ -98,7 +100,7 @@ export const paths = {
     social: {
       index: '/dashboard/social',
       profile: '/dashboard/social/profile',
-      feed: '/dashboard/social/feed'
+      feed: '/dashboard/social'
     }
   },
   components: {
