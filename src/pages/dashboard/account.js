@@ -3,7 +3,6 @@ import { subDays, subHours, subMinutes, subMonths } from 'date-fns';
 import { Box, Container, Divider, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { Seo } from 'src/components/seo';
 import { useMockedUser } from 'src/hooks/use-mocked-user';
-import { usePageView } from 'src/hooks/use-page-view';
 import { AccountBillingSettings } from 'src/sections/dashboard/account/account-billing-settings';
 import { AccountGeneralSettings } from 'src/sections/dashboard/account/account-general-settings';
 import { AccountNotificationsSettings } from 'src/sections/dashboard/account/account-notifications-settings';
@@ -23,8 +22,6 @@ const tabs = [
 const Page = () => {
   const user = useMockedUser();
   const [currentTab, setCurrentTab] = useState('general');
-
-  usePageView();
 
   const handleTabsChange = useCallback((event, value) => {
     setCurrentTab(value);

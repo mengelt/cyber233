@@ -1,6 +1,5 @@
 import { Box, Container, Stack } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { Previewer } from 'src/sections/components/previewer';
 import { Modal1 } from 'src/sections/components/modals/modal-1';
 import { Modal2 } from 'src/sections/components/modals/modal-2';
@@ -57,7 +56,6 @@ const components = [
 ];
 
 const Page = () => {
-  usePageView();
 
   return (
     <>

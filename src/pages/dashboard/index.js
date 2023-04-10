@@ -10,7 +10,6 @@ import {
   Unstable_Grid2 as Grid
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSettings } from 'src/hooks/use-settings';
 import { OverviewBanner } from 'src/sections/dashboard/overview/overview-banner';
 import { OverviewDoneTasks } from 'src/sections/dashboard/overview/overview-done-tasks';
@@ -29,7 +28,6 @@ const now = new Date();
 const Page = () => {
   const settings = useSettings();
 
-  usePageView();
 
   return (
     <>

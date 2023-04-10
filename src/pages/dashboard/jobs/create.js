@@ -1,11 +1,10 @@
 import { Box, Stack, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
+
 import { JobCreateForm } from 'src/sections/dashboard/jobs/job-create-form';
 
 const Page = () => {
-  usePageView();
-
+  
   return (
     <>
       <Seo title="Dashboard: Job Create" />

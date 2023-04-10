@@ -9,7 +9,6 @@ import {
   Unstable_Grid2 as Grid
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSettings } from 'src/hooks/use-settings';
 import { AcademyDailyProgress } from 'src/sections/dashboard/academy/academy-daily-progress';
 import { AcademyFind } from 'src/sections/dashboard/academy/academy-find';
@@ -48,8 +47,6 @@ const useCourses = () => {
 const Page = () => {
   const settings = useSettings();
   const courses = useCourses();
-
-  usePageView();
 
   return (
     <>

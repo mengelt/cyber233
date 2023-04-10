@@ -3,7 +3,6 @@ import { Box, Container, Stack, Typography } from '@mui/material';
 import { socialApi } from 'src/api/social';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { SocialPostAdd } from 'src/sections/dashboard/social/social-post-add';
 import { SocialPostCard } from 'src/sections/dashboard/social/social-post-card';
 
@@ -34,8 +33,6 @@ const usePosts = () => {
 
 const Page = () => {
   const posts = usePosts();
-
-  usePageView();
 
   return (
     <>

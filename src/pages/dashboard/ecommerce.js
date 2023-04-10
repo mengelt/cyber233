@@ -9,7 +9,6 @@ import {
   Unstable_Grid2 as Grid
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSettings } from 'src/hooks/use-settings';
 import { EcommerceCostBreakdown } from 'src/sections/dashboard/ecommerce/ecommerce-cost-breakdown';
 import { EcommerceSalesByCountry } from 'src/sections/dashboard/ecommerce/ecommerce-sales-by-country';
@@ -19,8 +18,6 @@ import { EcommerceStats } from 'src/sections/dashboard/ecommerce/ecommerce-stats
 
 const Page = () => {
   const settings = useSettings();
-
-  usePageView();
 
   return (
     <>

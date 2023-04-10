@@ -2,12 +2,10 @@ import { Box, Breadcrumbs, Container, Link, Stack, Typography } from '@mui/mater
 import { BreadcrumbsSeparator } from 'src/components/breadcrumbs-separator';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { ProductCreateForm } from 'src/sections/dashboard/product/product-create-form';
 
 const Page = () => {
-  usePageView();
 
   return (
     <>

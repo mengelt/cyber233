@@ -12,7 +12,6 @@ import {
 import { useTheme } from '@mui/material/styles';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 
 const getSections = (paletteMode) => ([
@@ -123,8 +122,6 @@ const getSections = (paletteMode) => ([
 const Page = () => {
   const theme = useTheme();
   const sections = getSections(theme.palette.mode);
-
-  usePageView();
 
   return (
     <>

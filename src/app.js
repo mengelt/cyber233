@@ -14,7 +14,7 @@ import { SettingsConsumer, SettingsProvider } from './contexts/settings-context'
 import { AuthConsumer, AuthProvider } from './contexts/auth/jwt-context';
 
 import { useNprogress } from './hooks/use-nprogress';
-import { useAnalytics } from './hooks/use-analytics';
+
 import { routes } from './routes';
 import { store } from './store';
 import { createTheme } from './theme';

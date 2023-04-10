@@ -17,7 +17,6 @@ import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { useDialog } from 'src/hooks/use-dialog';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { InvoicePdfDialog } from 'src/sections/dashboard/invoice/invoice-pdf-dialog';
 import { InvoicePdfDocument } from 'src/sections/dashboard/invoice/invoice-pdf-document';
@@ -52,8 +51,6 @@ const useInvoice = () => {
 const Page = () => {
   const invoice = useInvoice();
   const dialog = useDialog();
-
-  usePageView();
 
   if (!invoice) {
     return null;

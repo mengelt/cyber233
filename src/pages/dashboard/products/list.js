@@ -16,7 +16,6 @@ import { BreadcrumbsSeparator } from 'src/components/breadcrumbs-separator';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { ProductListSearch } from 'src/sections/dashboard/product/product-list-search';
 import { ProductListTable } from 'src/sections/dashboard/product/product-list-table';
@@ -98,8 +97,6 @@ const useProductsStore = (searchState) => {
 const Page = () => {
   const productsSearch = useProductsSearch();
   const productsStore = useProductsStore(productsSearch.state);
-
-  usePageView();
 
   return (
     <>

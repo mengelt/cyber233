@@ -1,6 +1,5 @@
 import { Box, Container, Stack } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { Previewer } from 'src/sections/components/previewer';
 import { Inputs1 } from 'src/sections/components/inputs/inputs-1';
 import { Inputs2 } from 'src/sections/components/inputs/inputs-2';
@@ -32,7 +31,6 @@ const components = [
 ];
 
 const Page = () => {
-  usePageView();
 
   return (
     <>

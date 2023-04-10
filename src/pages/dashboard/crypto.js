@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSettings } from 'src/hooks/use-settings';
 import { CryptoCards } from 'src/sections/dashboard/crypto/crypto-cards';
 import { CryptoOperation } from 'src/sections/dashboard/crypto/crypto-operation';
@@ -25,8 +24,6 @@ const now = new Date();
 const Page = () => {
   const settings = useSettings();
   const theme = useTheme();
-
-  usePageView();
 
   return (
     <>

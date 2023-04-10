@@ -5,7 +5,6 @@ import { Box, Button, Divider, Stack, SvgIcon, Typography, useMediaQuery } from 
 import { invoicesApi } from 'src/api/invoices';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { InvoiceListContainer } from 'src/sections/dashboard/invoice/invoice-list-container';
 import { InvoiceListSidebar } from 'src/sections/dashboard/invoice/invoice-list-sidebar';
 import { InvoiceListSummary } from 'src/sections/dashboard/invoice/invoice-list-summary';
@@ -94,8 +93,7 @@ const Page = () => {
   const [group, setGroup] = useState(true);
   const [openSidebar, setOpenSidebar] = useState(lgUp);
 
-  usePageView();
-
+  
   const handleGroupChange = useCallback((event) => {
     setGroup(event.target.checked);
   }, []);

@@ -9,7 +9,6 @@ import {
   Unstable_Grid2 as Grid
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSettings } from 'src/hooks/use-settings';
 import { LogisticsDeviatedVehicles } from 'src/sections/dashboard/logistics/logistics-deviated-vehicles';
 import { LogisticsErrorVehicles } from 'src/sections/dashboard/logistics/logistics-error-vehicles';
@@ -21,8 +20,6 @@ import { LogisticsVehiclesOverview } from 'src/sections/dashboard/logistics/logi
 
 const Page = () => {
   const settings = useSettings();
-
-  usePageView();
 
   return (
     <>

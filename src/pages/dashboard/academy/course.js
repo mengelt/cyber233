@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { CourseSummary } from 'src/sections/dashboard/academy/course-summary';
 import { CourseChapter } from 'src/sections/dashboard/academy/course-chapter';
@@ -72,8 +71,6 @@ const Email = new Schema({
 
 const Page = () => {
   const course = useCourse();
-
-  usePageView();
 
   const activeChapter = 1;
   const chapter = course.chapters[activeChapter];

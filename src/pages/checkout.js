@@ -14,7 +14,6 @@ import {
 } from '@mui/material';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { CheckoutBilling } from 'src/sections/checkout/checkout-billing';
 import { CheckoutSummary } from 'src/sections/checkout/checkout-summary';
@@ -53,8 +52,6 @@ const initialProducts = [
 const Page = () => {
   const [billing, setBilling] = useState(initialBilling);
   const [products, setProducts] = useState(initialProducts);
-
-  usePageView();
 
   const handleBillingChange = useCallback((event) => {
     setBilling((prevState) => ({

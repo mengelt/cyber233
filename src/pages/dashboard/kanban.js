@@ -3,7 +3,6 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import toast from 'react-hot-toast';
 import { Box, Stack, Typography } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { TaskModal } from 'src/sections/dashboard/kanban/task-modal';
 import { ColumnCard } from 'src/sections/dashboard/kanban/column-card';
 import { ColumnAdd } from 'src/sections/dashboard/kanban/column-add';
@@ -34,8 +33,6 @@ const Page = () => {
   const dispatch = useDispatch();
   const columnsIds = useColumnsIds();
   const [currentTaskId, setCurrentTaskId] = useState(null);
-
-  usePageView();
 
   useBoard();
 

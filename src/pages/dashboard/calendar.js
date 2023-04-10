@@ -8,7 +8,6 @@ import timelinePlugin from '@fullcalendar/timeline';
 import { Box, Card, Container, Stack, useMediaQuery } from '@mui/material';
 import { Seo } from 'src/components/seo';
 import { useDialog } from 'src/hooks/use-dialog';
-import { usePageView } from 'src/hooks/use-page-view';
 import { CalendarEventDialog } from 'src/sections/dashboard/calendar/calendar-event-dialog';
 import { CalendarToolbar } from 'src/sections/dashboard/calendar/calendar-toolbar';
 import { CalendarContainer } from 'src/sections/dashboard/calendar/calendar-container';
@@ -52,8 +51,6 @@ const Page = () => {
   const createDialog = useDialog();
   const updateDialog = useDialog();
   const updatingEvent = useCurrentEvent(events, updateDialog.data);
-
-  usePageView();
 
   const handleScreenResize = useCallback(() => {
     const calendarEl = calendarRef.current;

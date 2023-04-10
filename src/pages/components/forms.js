@@ -1,6 +1,5 @@
 import { Box, Container, Stack } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { Previewer } from 'src/sections/components/previewer';
 import { Form1 } from 'src/sections/components/forms/form-1';
 import { Form2 } from 'src/sections/components/forms/form-2';
@@ -87,7 +86,6 @@ const components = [
 ];
 
 const Page = () => {
-  usePageView();
 
   return (
     <>

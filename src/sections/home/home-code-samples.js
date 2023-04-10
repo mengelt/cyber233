@@ -11,14 +11,11 @@ const samples = [
     icon: '/assets/logos/logo-javascript.svg',
     code: `
 import { useState } from 'react';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useUser } from 'src/hooks/use-user';
 
 const Page = () => {
   const user = useUser();
   const [currentTab, setCurrentTab] = useState('general');
-
-  usePageView();
 
   return (
     <Box
@@ -66,14 +63,11 @@ const Page = () => {
     code: `
 import { useState } from 'react';
 import type { NextPage } from 'next';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useUser } from 'src/hooks/use-user';
 
 const Page: NextPage = () => {
   const user = useUser();
   const [currentTab, setCurrentTab] = useState<string>('general');
-
-  usePageView();
 
   return (
     <Box

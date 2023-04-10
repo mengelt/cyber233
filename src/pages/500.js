@@ -1,13 +1,11 @@
 import { Box, Button, Container, Typography, useMediaQuery } from '@mui/material';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
+
 import { paths } from 'src/paths';
 
 const Page = () => {
   const mdUp = useMediaQuery((theme) => theme.breakpoints.down('md'));
-
-  usePageView();
 
   return (
     <>

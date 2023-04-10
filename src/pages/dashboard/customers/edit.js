@@ -5,7 +5,6 @@ import { customersApi } from 'src/api/customers';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { CustomerEditForm } from 'src/sections/dashboard/customer/customer-edit-form';
 import { getInitials } from 'src/utils/get-initials';
@@ -37,8 +36,6 @@ const useCustomer = () => {
 
 const Page = () => {
   const customer = useCustomer();
-
-  usePageView();
 
   if (!customer) {
     return null;

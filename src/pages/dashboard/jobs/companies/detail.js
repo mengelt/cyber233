@@ -20,7 +20,6 @@ import { jobsApi } from 'src/api/jobs';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
 import { CompanyActivity } from 'src/sections/dashboard/jobs/company-activity';
 import { CompanyAssets } from 'src/sections/dashboard/jobs/company-assets';
@@ -66,8 +65,6 @@ const useCompany = () => {
 const Page = () => {
   const company = useCompany();
   const [currentTab, setCurrentTab] = useState('overview');
-
-  usePageView();
 
   const handleTabsChange = useCallback((event, value) => {
     setCurrentTab(value);

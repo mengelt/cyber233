@@ -4,7 +4,6 @@ import { Button, Card, CardContent, CardHeader, FormHelperText, TextField } from
 import { Seo } from 'src/components/seo';
 import { useAuth } from 'src/hooks/use-auth';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useRouter } from 'src/hooks/use-router';
 import { paths } from 'src/paths';
 
@@ -48,8 +47,6 @@ const Page = () => {
       }
     }
   });
-
-  usePageView();
 
   return (
     <>

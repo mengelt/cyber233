@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Box, Divider, useMediaQuery } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSearchParams } from 'src/hooks/use-search-params';
 import { MailComposer } from 'src/sections/dashboard/mail/mail-composer';
 import { MailThread } from 'src/sections/dashboard/mail/mail-thread';
@@ -140,8 +139,6 @@ const Page = () => {
   const labels = useLabels();
   const composer = useComposer();
   const sidebar = useSidebar();
-
-  usePageView();
 
   const view = emailId ? 'details' : 'list';
 

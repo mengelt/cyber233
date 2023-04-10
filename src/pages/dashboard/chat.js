@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Menu01Icon from '@untitled-ui/icons-react/build/esm/Menu01';
 import { Box, Divider, IconButton, SvgIcon, useMediaQuery } from '@mui/material';
 import { Seo } from 'src/components/seo';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSearchParams } from 'src/hooks/use-search-params';
 import { ChatBlank } from 'src/sections/dashboard/chat/chat-blank';
 import { ChatComposer } from 'src/sections/dashboard/chat/chat-composer';
@@ -85,8 +84,6 @@ const Page = () => {
   const compose = searchParams.get('compose') === 'true';
   const threadKey = searchParams.get('threadKey') || undefined;
   const sidebar = useSidebar();
-
-  usePageView();
 
   useThreads();
 

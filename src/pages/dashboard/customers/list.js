@@ -6,7 +6,6 @@ import { Box, Button, Card, Container, Stack, SvgIcon, Typography } from '@mui/m
 import { customersApi } from 'src/api/customers';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
-import { usePageView } from 'src/hooks/use-page-view';
 import { useSelection } from 'src/hooks/use-selection';
 import { CustomerListSearch } from 'src/sections/dashboard/customer/customer-list-search';
 import { CustomerListTable } from 'src/sections/dashboard/customer/customer-list-table';
@@ -107,8 +106,6 @@ const Page = () => {
   const customersStore = useCustomersStore(customersSearch.state);
   const customersIds = useCustomersIds(customersStore.customers);
   const customersSelection = useSelection(customersIds);
-
-  usePageView();
 
   return (
     <>
