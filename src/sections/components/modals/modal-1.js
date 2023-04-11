@@ -14,7 +14,7 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import { QuillEditor } from 'src/components/quill-editor';
+
 
 export const Modal1 = () => (
   <Box
@@ -84,13 +84,6 @@ export const Modal1 = () => (
           borderBottom: 1,
           borderBottomColor: 'divider',
           borderBottomStyle: 'solid'
-        }}
-      />
-      <QuillEditor
-        placeholder="Leave a message"
-        sx={{
-          border: 'none',
-          flexGrow: 1
         }}
       />
       <Divider />

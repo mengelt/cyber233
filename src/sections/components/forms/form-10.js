@@ -1,5 +1,5 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
-import { QuillEditor } from 'src/components/quill-editor';
+
 
 export const Form10 = () => (
   <Box sx={{ p: 3 }}>
@@ -18,10 +18,6 @@ export const Form10 = () => (
       >
         Description
       </Typography>
-      <QuillEditor
-        placeholder="Write something"
-        sx={{ height: 400 }}
-      />
       <Box
         sx={{
           display: 'flex',

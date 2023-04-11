@@ -19,7 +19,7 @@ import {
   Tooltip,
   Typography
 } from '@mui/material';
-import { QuillEditor } from 'src/components/quill-editor';
+
 
 export const MailComposer = (props) => {
   const {
@@ -133,15 +133,6 @@ export const MailComposer = (props) => {
             borderColor: 'divider'
           }}
           value={subject}
-        />
-        <QuillEditor
-          onChange={onMessageChange}
-          placeholder="Leave a message"
-          sx={{
-            border: 'none',
-            flexGrow: 1
-          }}
-          value={message}
         />
         <Divider />
         <Stack

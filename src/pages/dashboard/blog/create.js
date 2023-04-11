@@ -17,7 +17,6 @@ import {
 } from '@mui/material';
 import { BreadcrumbsSeparator } from 'src/components/breadcrumbs-separator';
 import { FileDropzone } from 'src/components/file-dropzone';
-import { QuillEditor } from 'src/components/quill-editor';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { paths } from 'src/paths';
@@ -257,10 +256,6 @@ const Page = () => {
                     xs={12}
                     md={8}
                   >
-                    <QuillEditor
-                      placeholder="Write something"
-                      sx={{ height: 330 }}
-                    />
                   </Grid>
                 </Grid>
               </CardContent>
