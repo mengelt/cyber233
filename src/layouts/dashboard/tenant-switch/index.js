@@ -21,7 +21,21 @@ export const TenantSwitch = (props) => {
             color="inherit"
             variant="h6"
           >
-            BerkBook
+                            <Box
+                  sx={{
+                    color: 'text.primary',
+                    fontFamily: '\'Noto Serif\', \'Plus Jakarta Sans\', sans-serif',
+                    fontSize: 16,
+                    fontWeight: 800,
+                    letterSpacing: '0.3px',
+                    lineHeight: 2.5,
+                    '& span': {
+                      color: 'primary.main'
+                    }
+                  }}
+                >
+                  BerkBook
+                </Box>
           </Typography>
 
         </Box>

@@ -47,7 +47,11 @@ const validationSchema = Yup.object({
     .required('Password is required'),
   policy: Yup
     .boolean()
+    .oneOf([true], 'This field must be checked'),
+  terms: Yup
+    .boolean()
     .oneOf([true], 'This field must be checked')
+
 });
 
 const Page = () => {
@@ -59,6 +63,7 @@ const Page = () => {
     initialValues,
     validationSchema,
     onSubmit: async (values, helpers) => {
+
       try {
         await signUp(values.email, values.name, values.password);
 

@@ -28,6 +28,8 @@ export const AccountPopover = (props) => {
   const auth = useAuth();
   const user = useMockedUser();
 
+  console.info({auth})
+
   const handleLogout = useCallback(async () => {
     try {
       onClose?.();
@@ -79,13 +81,13 @@ export const AccountPopover = (props) => {
       {...other}>
       <Box sx={{ p: 2 }}>
         <Typography variant="body1">
-          {user.name}
+          {auth.user.name}
         </Typography>
         <Typography
           color="text.secondary"
           variant="body2"
         >
-          demo@devias.io
+          {auth.user.email}
         </Typography>
       </Box>
       <Divider />
@@ -146,18 +148,7 @@ export const AccountPopover = (props) => {
             py: 0.5
           }}
         >
-          <ListItemIcon>
-            <SvgIcon fontSize="small">
-              <CreditCard01Icon />
-            </SvgIcon>
-          </ListItemIcon>
-          <ListItemText
-            primary={(
-              <Typography variant="body1">
-                Billing
-              </Typography>
-            )}
-          />
+         
         </ListItemButton>
       </Box>
       <Divider sx={{ my: '0 !important' }} />

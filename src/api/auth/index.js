@@ -2,6 +2,7 @@ import { createResourceId } from 'src/utils/create-resource-id';
 import { decode, JWT_EXPIRES_IN, JWT_SECRET, sign } from 'src/utils/jwt';
 import { wait } from 'src/utils/wait';
 import { users } from './data';
+import axios from 'axios';
 
 const STORAGE_KEY = 'users';
 
@@ -69,6 +70,30 @@ class AuthApi {
   async signUp(request) {
     const { email, name, password } = request;
 
+    return new Promise((resolve, reject) => {
+
+      let newUser = {email, name, password};
+
+      try {
+        axios.post('http://localhost:5000/register', newUser)
+          .then(newUserResponse => {
+
+            console.info({newUserResponse})
+
+            if ( newUserResponse.status === 200 ) {
+              resolve({accessToken: newUserResponse.data.accessToken})
+            } else {
+              reject(`Error ${newUserResponse.status} Unexpected error occurred during registration.`)
+            }
+
+          })
+      } catch (e) {
+        reject('Unexpected error occurred during registration.')
+      }
+
+    });
+
+    /*
     await wait(1000);
 
     return new Promise((resolve, reject) => {
@@ -106,6 +131,7 @@ class AuthApi {
         reject(new Error('Internal server error'));
       }
     });
+    */
   }
 
   me(request) {
@@ -114,22 +140,12 @@ class AuthApi {
     return new Promise((resolve, reject) => {
       try {
         // Decode access token
-        const decodedToken = decode(accessToken);
+        const user = decode(accessToken);
 
-        // Merge static users (data file) with persisted users (browser storage)
-        const mergedUsers = [
-          ...users,
-          ...getPersistedUsers()
-        ];
+        console.info(user)
 
-        // Find the user
-        const { userId } = decodedToken;
-        const user = mergedUsers.find((user) => user.id === userId);
-
-        if (!user) {
-          reject(new Error('Invalid authorization token'));
-          return;
-        }
+        user.avatar = '';
+        user.plan = '';
 
         resolve({
           id: user.id,
