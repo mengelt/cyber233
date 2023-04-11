@@ -25,6 +25,7 @@ import { useMounted } from 'src/hooks/use-mounted';
 import { paths } from 'src/paths';
 import { SocialConnections } from 'src/sections/dashboard/social/social-connections';
 import { SocialTimeline } from 'src/sections/dashboard/social/social-timeline';
+import { useAuth } from 'src/hooks/use-auth';
 
 const tabs = [
   { label: 'Timeline', value: 'timeline' },
@@ -34,6 +35,7 @@ const tabs = [
 const useProfile = () => {
   const isMounted = useMounted();
   const [profile, setProfile] = useState(null);
+  
 
   const handleProfileGet = useCallback(async () => {
     try {
@@ -84,6 +86,7 @@ const usePosts = () => {
 const useConnections = (search = '') => {
   const [connections, setConnections] = useState([]);
   const isMounted = useMounted();
+  
 
   const handleConnectionsGet = useCallback(async () => {
     const response = await socialApi.getConnections();
@@ -111,7 +114,8 @@ export const Page = () => {
   const posts = usePosts();
   const [connectionsQuery, setConnectionsQuery] = useState('');
   const connections = useConnections(connectionsQuery);
-
+  const auth = useAuth();
+  
   const handleConnectionAdd = useCallback(() => {
     setStatus('pending');
   }, []);
@@ -215,10 +219,10 @@ export const Page = () => {
                     color="text.secondary"
                     variant="overline"
                   >
-                    {profile.bio}
+                    User
                   </Typography>
                   <Typography variant="h6">
-                    {profile.name}
+                    {auth.user.name}
                   </Typography>
                 </div>
               </Stack>

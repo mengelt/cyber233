@@ -28,12 +28,14 @@ export const AccountPopover = (props) => {
   const auth = useAuth();
   const user = useMockedUser();
 
-  console.info({auth})
+  
 
   const handleLogout = useCallback(async () => {
+    console.info('jwt sign out')
     try {
+      console.info(1);
       onClose?.();
-
+      console.info(2);
       switch (auth.issuer) {
         case Issuer.Amplify: {
           await auth.signOut();
@@ -51,6 +53,7 @@ export const AccountPopover = (props) => {
         }
 
         case Issuer.JWT: {
+          console.info('jwt sign out')
           await auth.signOut();
           break;
         }
@@ -81,13 +84,13 @@ export const AccountPopover = (props) => {
       {...other}>
       <Box sx={{ p: 2 }}>
         <Typography variant="body1">
-          {auth.user.name}
+          {auth !== null && auth.user !== null && auth.user.name}
         </Typography>
         <Typography
           color="text.secondary"
           variant="body2"
         >
-          {auth.user.email}
+          {auth !== null && auth.user !== null && auth.user.email}
         </Typography>
       </Box>
       <Divider />
@@ -138,18 +141,7 @@ export const AccountPopover = (props) => {
             )}
           />
         </ListItemButton>
-        <ListItemButton
-          component={RouterLink}
-          href={paths.dashboard.index}
-          onClick={onClose}
-          sx={{
-            borderRadius: 1,
-            px: 1,
-            py: 0.5
-          }}
-        >
-         
-        </ListItemButton>
+
       </Box>
       <Divider sx={{ my: '0 !important' }} />
       <Box

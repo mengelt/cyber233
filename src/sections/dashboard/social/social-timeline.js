@@ -6,7 +6,7 @@ import { SocialAbout } from './social-about';
 
 export const SocialTimeline = (props) => {
   const { posts = [], profile, ...other } = props;
-
+  
   return (
     <div {...other}>
       <Grid

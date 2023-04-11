@@ -141,6 +141,7 @@ export const AuthProvider = (props) => {
   }, [dispatch]);
 
   const signOut = useCallback(async () => {
+    console.info('jwt-context.js sign out')
     sessionStorage.removeItem(STORAGE_KEY);
     dispatch({ type: ActionType.SIGN_OUT });
   }, [dispatch]);

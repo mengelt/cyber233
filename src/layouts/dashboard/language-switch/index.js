@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Box, IconButton, Tooltip } from '@mui/material';
 import { usePopover } from 'src/hooks/use-popover';
-import { LanguagePopover } from './language-popover';
+
 
 const languages = {
   en: '/assets/flags/flag-uk.svg',
@@ -34,11 +34,7 @@ export const LanguageSwitch = () => {
           </Box>
         </IconButton>
       </Tooltip>
-      <LanguagePopover
-        anchorEl={popover.anchorRef.current}
-        onClose={popover.handleClose}
-        open={popover.open}
-      />
+
     </>
   );
 };
