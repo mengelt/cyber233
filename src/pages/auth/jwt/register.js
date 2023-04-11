@@ -26,6 +26,7 @@ const initialValues = {
   name: '',
   password: '',
   policy: false,
+  terms: false,
   submit: null
 };
 
@@ -179,8 +180,8 @@ const Page = () => {
                 }}
               >
                 <Checkbox
-                  checked={formik.values.policy}
-                  name="policy"
+                  checked={formik.values.terms}
+                  name="terms"
                   onChange={formik.handleChange}
                 />
                 <Typography
@@ -211,7 +212,7 @@ const Page = () => {
                 </FormHelperText>
               )}
               <Button
-                disabled={formik.isSubmitting}
+                disabled={formik.isSubmitting || formik.values.terms === false || formik.values.policy === false}
                 fullWidth
                 size="large"
                 sx={{ mt: 2 }}
