@@ -1,4 +1,4 @@
-import { Box, Button, Container, Rating, Stack, SvgIcon, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 export const HomeHero = () => {

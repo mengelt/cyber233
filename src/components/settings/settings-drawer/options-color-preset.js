@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Box, Chip, Stack, Typography } from '@mui/material';
-import { blue, green, indigo, purple } from 'src/theme/colors';
+import { blue, green, indigo, purple, yellow } from 'src/theme/colors';
 
 export const OptionsColorPreset = (props) => {
   const { onChange, value } = props;
@@ -25,7 +25,7 @@ export const OptionsColorPreset = (props) => {
       label: 'Purple',
       value: 'purple',
       color: purple.main
-    }
+    }  
   ];
 
   return (
@@ -76,5 +76,5 @@ export const OptionsColorPreset = (props) => {
 
 OptionsColorPreset.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.oneOf(['blue', 'green', 'indigo', 'purple'])
+  value: PropTypes.oneOf(['blue', 'green', 'indigo', 'purple', 'yellow'])
 };

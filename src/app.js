@@ -18,12 +18,7 @@ import { useNprogress } from './hooks/use-nprogress';
 import { routes } from './routes';
 import { store } from './store';
 import { createTheme } from './theme';
-// Remove if react-quill is not used
-import 'react-quill/dist/quill.snow.css';
-// Remove if react-draft-wysiwyg is not used
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-// Remove if simplebar is not used
-import 'simplebar-react/dist/simplebar.min.css';
+
 // Remove if mapbox is not used
 import 'mapbox-gl/dist/mapbox-gl.css';
 // Remove if locales are not used

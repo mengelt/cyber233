@@ -121,8 +121,8 @@ export const TopNav = (props) => {
                 <Box
                   sx={{
                     color: 'text.primary',
-                    fontFamily: '\'Plus Jakarta Sans\', sans-serif',
-                    fontSize: 14,
+                    fontFamily: '\'Noto Serif\', \'Plus Jakarta Sans\', sans-serif',
+                    fontSize: 16,
                     fontWeight: 800,
                     letterSpacing: '0.3px',
                     lineHeight: 2.5,

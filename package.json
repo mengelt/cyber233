@@ -2,7 +2,7 @@
   "name": "berkbook",
   "version": "1.0",
   "author": "Mark, Saleena, Jujhar",
-  "homepage": "https://github.com/mengelt/cyber233",
+  "homepage": "",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -71,7 +71,6 @@
     "react-i18next": "12.1.5",
     "react-map-gl": "7.0.21",
     "react-markdown": "8.0.5",
-    "react-quill": "2.0.0",
     "react-redux": "8.0.5",
     "react-router": "6.8.1",
     "react-router-dom": "6.8.1",
@@ -81,7 +80,6 @@
     "redux": "4.2.1",
     "redux-devtools-extension": "2.13.9",
     "redux-thunk": "2.4.2",
-    "simplebar-react": "3.2.1",
     "stylis": "4.1.3",
     "stylis-plugin-rtl": "2.0.2",
     "yup": "1.0.0"
@@ -95,7 +93,6 @@
     "@types/react": "18.0.28",
     "@types/react-beautiful-dnd": "13.1.3",
     "@types/react-dom": "18.0.11",
-    "@types/react-draft-wysiwyg": "1.13.4",
     "@types/react-redux": "7.1.25",
     "@types/react-slick": "0.23.10",
     "eslint": "8.34.0",

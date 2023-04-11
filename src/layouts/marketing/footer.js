@@ -17,20 +17,15 @@ const sections = [
     items: [
       {
         title: 'Register',
-        path: paths.components.index
+        path: paths.auth.jwt.register
       },
       {
         title: 'Sign In',
-        path: paths.components.index
+        path: paths.auth.jwt.login
       },
       {
         title: 'Privacy Features',
-        path: paths.components.index
-      },
-      {
-        title: 'Documentation',
-        external: true,
-        path: paths.docs
+        path: paths.features.index
       }
     ]
   },
@@ -107,7 +102,7 @@ export const Footer = (props) => (
               <Box
                 sx={{
                   color: 'text.primary',
-                  fontFamily: '\'Plus Jakarta Sans\', sans-serif',
+                  fontFamily: '\'Noto Serif\', \'Plus Jakarta Sans\', sans-serif',
                   fontSize: 14,
                   fontWeight: 800,
                   letterSpacing: '0.3px',
