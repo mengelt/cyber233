@@ -8,65 +8,6 @@ import { SideNavItem } from './side-nav-item';
 
 const items = [
   {
-    title: 'Components',
-    path: paths.components.index
-  },
-  {
-    title: 'Pages',
-    children: [
-      {
-        subheader: 'Dashboard',
-        items: [
-          {
-            title: 'Overview',
-            path: paths.dashboard.index
-          },
-          {
-            title: 'Customers',
-            path: paths.dashboard.customers.index
-          },
-          {
-            title: 'Logistics',
-            path: paths.dashboard.logistics.index
-          },
-          {
-            title: 'File Manager',
-            path: paths.dashboard.fileManager
-          },
-          {
-            title: 'Academy',
-            path: paths.dashboard.academy.index
-          }
-        ]
-      },
-      {
-        subheader: 'Other',
-        items: [
-          {
-            title: 'Blog',
-            path: paths.dashboard.blog.index
-          },
-          {
-            title: 'Pricing',
-            path: paths.pricing
-          },
-          {
-            title: 'Contact',
-            path: paths.contact
-          },
-          {
-            title: 'Checkout',
-            path: paths.checkout
-          },
-          {
-            title: 'Error',
-            path: paths[404]
-          }
-        ]
-      }
-    ]
-  },
-  {
     title: 'Docs',
     path: paths.docs,
     external: true

@@ -6,6 +6,10 @@ import Error404Page from 'src/pages/404';
 import Error500Page from 'src/pages/500';
 import ContactPage from 'src/pages/contact';
 import CheckoutPage from 'src/pages/checkout';
+
+import PrivacyPage from 'src/pages/legal/privacy';
+import TermsPage from 'src/pages/legal/terms';
+
 import FeaturesPage from 'src/pages/features';
 import PricingPage from 'src/pages/pricing';
 import { authRoutes } from './auth';
@@ -35,6 +39,14 @@ export const routes = [
   ...authRoutes,
   ...authDemoRoutes,
   ...dashboardRoutes,
+  {
+    path: '/legal/privacy',
+    element: <PrivacyPage />
+  },
+  {
+    path: '/legal/terms',
+    element: <TermsPage />
+  },
   {
     path: 'features',
     element: <FeaturesPage />

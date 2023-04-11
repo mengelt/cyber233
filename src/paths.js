@@ -4,6 +4,10 @@ export const paths = {
   contact: '/contact',
   pricing: '/pricing',  
   friends: '/friends',
+  legal: {
+    privacy: '/legal/privacy',
+    terms: '/legal/terms',
+  },
   auth: {
     auth0: {
       callback: '/auth/auth0/callback',

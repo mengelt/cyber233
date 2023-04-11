@@ -34,15 +34,11 @@ const sections = [
     items: [
       {
         title: 'Privacy Policy',
-        path: '#'
+        path: paths.legal.privacy,
       },
       {
         title: 'Terms & Conditions',
-        path: '#'
-      },
-      {
-        title: 'Contact',
-        path: '#'
+        path: paths.legal.terms
       }
     ]
   }
