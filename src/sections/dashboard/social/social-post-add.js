@@ -1,3 +1,6 @@
+
+import { useState } from 'react';
+
 import Attachment01Icon from '@untitled-ui/icons-react/build/esm/Attachment01';
 import FaceSmileIcon from '@untitled-ui/icons-react/build/esm/FaceSmile';
 import Image01Icon from '@untitled-ui/icons-react/build/esm/Image01';
@@ -15,10 +18,50 @@ import {
 } from '@mui/material';
 import { useMockedUser } from 'src/hooks/use-mocked-user';
 import { getInitials } from 'src/utils/get-initials';
+import { useRouter } from 'src/hooks/use-router';
+import axios from 'axios';
+import { paths } from 'src/paths';
 
 export const SocialPostAdd = (props) => {
   const user = useMockedUser();
+  const router = useRouter();
   const smUp = useMediaQuery((theme) => theme.breakpoints.up('sm'));
+  const [newText, setNewText] = useState("");
+  const [posting, setPosting] = useState(false);
+
+  const handleCreatePost = (e) => {
+    setPosting(true);
+
+    const newPost = {
+      post : newText
+    }
+        
+    const accessToken = window.sessionStorage.getItem('accessToken');
+    
+    const config = {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    };
+  
+    console.info('sending to api')
+    axios.post('http://localhost:5000/post', newPost, config)
+      .then(postResponse => {
+        console.info('postResponse', postResponse)
+
+        if ( postResponse.status === 200 ) {
+          router.push(paths.dashboard)
+        }
+
+      })
+      .catch(e => {
+        setPosting(false);
+        console.info(e, 'error on post')
+      })
+      
+  }
+
+  const handleTextChange = (e) => {
+    setNewText(e.target.value)
+  }
 
   return (
     <Card {...props}>
@@ -44,8 +87,9 @@ export const SocialPostAdd = (props) => {
             <OutlinedInput
               fullWidth
               multiline
-              placeholder="What's on your mind"
-              rows={3}
+              onChange={handleTextChange}
+              value={newText}
+              rows={4}
             />
             <Stack
               alignItems="center"
@@ -82,7 +126,7 @@ export const SocialPostAdd = (props) => {
                 </Stack>
               )}
               <div>
-                <Button variant="contained">
+                <Button disabled={newText.length === 0 || posting} variant="contained" onClick={handleCreatePost}>
                   Post
                 </Button>
               </div>

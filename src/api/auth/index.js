@@ -42,24 +42,28 @@ class AuthApi {
 
     return new Promise((resolve, reject) => {
       try {
-        // Merge static users (data file) with persisted users (browser storage)
-        const mergedUsers = [
-          ...users,
-          ...getPersistedUsers()
-        ];
 
-        // Find the user
-        const user = mergedUsers.find((user) => user.email === email);
+        let existingUser = {email, password};
 
-        if (!user || (user.password !== password)) {
-          reject(new Error('Please check your email and password'));
-          return;
+        try {
+          axios.post('http://localhost:5000/login', existingUser)
+            .then(userResponse => {
+  
+              console.info({userResponse})
+  
+              if ( userResponse.status === 200 ) {
+                resolve({accessToken: userResponse.data.token})
+              } else if ( userResponse.status === 401 ) {
+                reject(`Invalid email or password`)
+              } else {
+                reject(`Error ${userResponse.status} Unexpected error occurred during log in.`)
+              }
+  
+            })
+        } catch (e) {
+          reject('Unexpected error occurred during login.')
         }
-
-        // Create the access token
-        const accessToken = sign({ userId: user.id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
-
-        resolve({ accessToken });
+        
       } catch (err) {
         console.error('[Auth Api]: ', err);
         reject(new Error('Internal server error'));
@@ -81,7 +85,7 @@ class AuthApi {
             console.info({newUserResponse})
 
             if ( newUserResponse.status === 200 ) {
-              resolve({accessToken: newUserResponse.data.accessToken})
+              resolve({accessToken: newUserResponse.data.token})
             } else {
               reject(`Error ${newUserResponse.status} Unexpected error occurred during registration.`)
             }
@@ -142,18 +146,12 @@ class AuthApi {
         // Decode access token
         const user = decode(accessToken);
 
-        console.info(user)
-
-        user.avatar = '';
-        user.plan = '';
-
         resolve({
           id: user.id,
-          avatar: user.avatar,
           email: user.email,
-          name: user.name,
-          plan: user.plan
+          name: user.name
         });
+        
       } catch (err) {
         console.error('[Auth Api]: ', err);
         reject(new Error('Internal server error'));

@@ -1,4 +1,3 @@
-import { addDays, subDays, subHours, subMinutes } from 'date-fns';
 import PlusIcon from '@untitled-ui/icons-react/build/esm/Plus';
 import {
   Box,
@@ -11,23 +10,52 @@ import {
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
 import { useSettings } from 'src/hooks/use-settings';
-import { OverviewBanner } from 'src/sections/dashboard/overview/overview-banner';
-import { OverviewDoneTasks } from 'src/sections/dashboard/overview/overview-done-tasks';
-import { OverviewEvents } from 'src/sections/dashboard/overview/overview-events';
-import { OverviewInbox } from 'src/sections/dashboard/overview/overview-inbox';
-import { OverviewTransactions } from 'src/sections/dashboard/overview/overview-transactions';
-import { OverviewPendingIssues } from 'src/sections/dashboard/overview/overview-pending-issues';
-import { OverviewSubscriptionUsage } from 'src/sections/dashboard/overview/overview-subscription-usage';
-import { OverviewHelp } from 'src/sections/dashboard/overview/overview-help';
-import { OverviewJobs } from 'src/sections/dashboard/overview/overview-jobs';
-import { OverviewOpenTickets } from 'src/sections/dashboard/overview/overview-open-tickets';
-import { OverviewTips } from 'src/sections/dashboard/overview/overview-tips';
+import { paths } from 'src/paths';
+import { useRouter } from 'src/hooks/use-router';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { SocialPostCard } from 'src/sections/dashboard/social/social-post-card';
 
-const now = new Date();
 
 const Page = () => {
+  
   const settings = useSettings();
+  const router = useRouter();
 
+  const [posts, setPosts] = useState([]);
+  const [fetchType, setFetchType] = useState("T");
+
+  useEffect(() => {
+
+    fetchData();
+
+  }, [])
+
+  const fetchData = () => {
+
+    if ( fetchType === "T" ) {
+
+      const accessToken = window.sessionStorage.getItem('accessToken');
+    
+      const config = {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      };
+      
+      axios.get('http://localhost:5000/feed', config)
+        .then(feedResponse => {
+
+          console.info(feedResponse.data)
+          
+          setPosts(feedResponse.data)
+        })
+
+    }
+
+  }
+
+  const handleNewPost = () => {
+    router.push(paths.dashboard.post);
+  }
 
   return (
     <>
@@ -70,6 +98,7 @@ const Page = () => {
                           <PlusIcon />
                         </SvgIcon>
                       )}
+                      onClick={handleNewPost}
                       variant="contained"
                     >
                       New Post
@@ -79,8 +108,34 @@ const Page = () => {
               </Stack>
             </Grid>
           </Grid>
+
+          <Stack
+            spacing={3}
+            sx={{ mt: 3 }}
+          >
+            
+            {posts.map(( (post, idx) => {
+              let postDate = new Date(post.dateAdded);
+              let avatar = '/assets/avatars/user.png';
+              return (
+                <SocialPostCard
+                  key={idx}
+                  authorAvatar={avatar}
+                  authorName={post.token}
+                  comments={[]}
+                  createdAt={postDate}
+                  isLiked={false}
+                  likes={parseInt(Math.random(0)*2)}
+                  media={null}
+                  message={post.post}
+                />
+              )
+              }))}
+          </Stack>
         </Container>
       </Box>
+
+
     </>
   );
 };

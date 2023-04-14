@@ -2,6 +2,9 @@ import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard';
 
+const PostPage = lazy(() => import('src/pages/post/index'));
+
+
 const IndexPage = lazy(() => import('src/pages/dashboard/index'));
 
 const SocialDashboardPage = lazy(() => import('src/pages/dashboard/social/feed'));
@@ -57,6 +60,8 @@ const FileManagerPage = lazy(() => import('src/pages/dashboard/file-manager'));
 const KanbanPage = lazy(() => import('src/pages/dashboard/kanban'));
 const MailPage = lazy(() => import('src/pages/dashboard/mail'));
 
+
+
 export const dashboardRoutes = [
   {
     path: 'dashboard',
@@ -72,6 +77,10 @@ export const dashboardRoutes = [
         index: true,
         element: <IndexPage />
       },
+      {
+        path: 'post',
+        element: <PostPage />
+      },      
       {
         path: 'social',
         children: [

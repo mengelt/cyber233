@@ -92,7 +92,7 @@ export const SocialPostCard = (props) => {
               {authorName}
             </Link>
             <Typography variant="body2">
-              updated her status
+              posted
             </Typography>
           </Stack>
         )}
@@ -106,19 +106,6 @@ export const SocialPostCard = (props) => {
         <Typography variant="body1">
           {message}
         </Typography>
-        {media && (
-          <Box sx={{ mt: 3 }}>
-            <CardActionArea>
-              <CardMedia
-                image={media}
-                sx={{
-                  backgroundPosition: 'top',
-                  height: 500
-                }}
-              />
-            </CardActionArea>
-          </Box>
-        )}
         <Stack
           alignItems="center"
           direction="row"
@@ -174,20 +161,7 @@ export const SocialPostCard = (props) => {
             </IconButton>
           </div>
         </Stack>
-        <Divider sx={{ my: 3 }} />
-        <Stack spacing={3}>
-          {comments.map((comment) => (
-            <SocialComment
-              authorAvatar={comment.author.avatar}
-              authorName={comment.author.name}
-              createdAt={comment.createdAt}
-              key={comment.id}
-              message={comment.message}
-            />
-          ))}
-        </Stack>
-        <Divider sx={{ my: 3 }} />
-        <SocialCommentAdd />
+
       </Box>
     </Card>
   );

@@ -31,29 +31,11 @@ export const AccountPopover = (props) => {
   
 
   const handleLogout = useCallback(async () => {
-    console.info('jwt sign out')
     try {
-      console.info(1);
       onClose?.();
-      console.info(2);
       switch (auth.issuer) {
-        case Issuer.Amplify: {
-          await auth.signOut();
-          break;
-        }
-
-        case Issuer.Auth0: {
-          await auth.logout();
-          break;
-        }
-
-        case Issuer.Firebase: {
-          await auth.signOut();
-          break;
-        }
 
         case Issuer.JWT: {
-          console.info('jwt sign out')
           await auth.signOut();
           break;
         }
