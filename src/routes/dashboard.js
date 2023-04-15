@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard';
 
 const PostPage = lazy(() => import('src/pages/post/index'));
+const FriendsPage = lazy(() => import('src/pages/friends/index'));
 
 
 const IndexPage = lazy(() => import('src/pages/dashboard/index'));
@@ -80,6 +81,10 @@ export const dashboardRoutes = [
       {
         path: 'post',
         element: <PostPage />
+      },      
+      {
+        path: 'friends',
+        element: <FriendsPage />
       },      
       {
         path: 'social',

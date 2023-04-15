@@ -1,12 +1,17 @@
 import PlusIcon from '@untitled-ui/icons-react/build/esm/Plus';
+import Settings03Icon from '@untitled-ui/icons-react/build/esm/Settings03';
+import Backdrop from '@mui/material/Backdrop';
 import {
   Box,
   Button,
+  Modal,
   Container,
   Stack,
+  Fade,
   SvgIcon,
   Typography,
-  Unstable_Grid2 as Grid
+  Unstable_Grid2 as Grid,
+  
 } from '@mui/material';
 import { Seo } from 'src/components/seo';
 import { useSettings } from 'src/hooks/use-settings';
@@ -17,6 +22,18 @@ import axios from 'axios';
 import { SocialPostCard } from 'src/sections/dashboard/social/social-post-card';
 
 
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 800,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 const Page = () => {
   
   const settings = useSettings();
@@ -24,6 +41,11 @@ const Page = () => {
 
   const [posts, setPosts] = useState([]);
   const [fetchType, setFetchType] = useState("T");
+  const [diagramOpen, setDiagramOpen] = useState(false);
+
+  const handleToggleDiagram = () => {
+    setDiagramOpen(!diagramOpen)
+  }
 
   useEffect(() => {
 
@@ -51,6 +73,14 @@ const Page = () => {
 
     }
 
+  }
+
+  const handleToggleToken = () => {
+    if ( fetchType === "T" ) {
+      setFetchType("P")
+    } else {
+      setFetchType("T")
+    }
   }
 
   const handleNewPost = () => {
@@ -92,10 +122,30 @@ const Page = () => {
                     direction="row"
                     spacing={4}
                   >
+
+                  <Button
+                      startIcon={(
+                        <SvgIcon>
+                          
+                        </SvgIcon>
+                      )}   
+                      onClick={handleToggleDiagram}                   
+                      ></Button>
+
+                      <Button
+                      startIcon={(
+                        <SvgIcon>
+                          
+                        </SvgIcon>
+                      )}   
+                      onClick={handleToggleToken}                   
+                      >
+                      
+                    </Button>                    
                     <Button
                       startIcon={(
                         <SvgIcon>
-                          <PlusIcon />
+                          <Settings03Icon />
                         </SvgIcon>
                       )}
                       onClick={handleNewPost}
@@ -103,6 +153,9 @@ const Page = () => {
                     >
                       New Post
                     </Button>
+
+
+
                   </Stack>
                 </div>
               </Stack>
@@ -117,25 +170,59 @@ const Page = () => {
             {posts.map(( (post, idx) => {
               let postDate = new Date(post.dateAdded);
               let avatar = '/assets/avatars/user.png';
-              return (
-                <SocialPostCard
-                  key={idx}
-                  authorAvatar={avatar}
-                  authorName={post.token}
-                  comments={[]}
-                  createdAt={postDate}
-                  isLiked={false}
-                  likes={parseInt(Math.random(0)*2)}
-                  media={null}
-                  message={post.post}
-                />
-              )
+              if ( fetchType === "T" ) {
+                return (
+                  <SocialPostCard
+                    key={idx}
+                    authorAvatar={avatar}
+                    authorName={post.token}
+                    comments={[]}
+                    createdAt={postDate}
+                    isLiked={false}
+                    likes={parseInt(Math.random(0)*2)}
+                    media={null}
+                    message={post.post}
+                  />
+                )
+              } else {
+                return (
+                  <SocialPostCard
+                    key={idx}
+                    authorAvatar={post.identity.avatar}
+                    authorName={post.identity.name}
+                    comments={[]}
+                    createdAt={postDate}
+                    isLiked={false}
+                    likes={parseInt(Math.random(0)*2)}
+                    media={null}
+                    message={post.post}
+                  />
+                )                
+              }
               }))}
           </Stack>
         </Container>
       </Box>
 
-
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={diagramOpen}
+        onClose={handleToggleDiagram}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+      >
+        <Fade in={diagramOpen}>
+          <Box sx={modalStyle}>
+            <img src="/assets/flow/flow.png" />
+          </Box>
+        </Fade>
+      </Modal>
     </>
   );
 };

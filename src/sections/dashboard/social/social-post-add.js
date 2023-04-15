@@ -42,13 +42,13 @@ export const SocialPostAdd = (props) => {
       headers: { Authorization: `Bearer ${accessToken}` }
     };
   
-    console.info('sending to api')
+    
     axios.post('http://localhost:5000/post', newPost, config)
       .then(postResponse => {
         console.info('postResponse', postResponse)
 
         if ( postResponse.status === 200 ) {
-          router.push(paths.dashboard)
+          router.push(paths.dashboard.index)
         }
 
       })

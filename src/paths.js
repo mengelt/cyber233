@@ -3,7 +3,7 @@ export const paths = {
   checkout: '/checkout',
   contact: '/contact',
   pricing: '/pricing',  
-  friends: '/friends',
+  friends: '/dashboard/friends',
   legal: {
     privacy: '/legal/privacy',
     terms: '/legal/terms',
