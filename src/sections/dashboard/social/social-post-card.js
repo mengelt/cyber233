@@ -166,14 +166,3 @@ export const SocialPostCard = (props) => {
     </Card>
   );
 };
-
-SocialPostCard.propTypes = {
-  authorAvatar: PropTypes.string.isRequired,
-  authorName: PropTypes.string.isRequired,
-  comments: PropTypes.array.isRequired,
-  createdAt: PropTypes.number.isRequired,
-  isLiked: PropTypes.bool.isRequired,
-  likes: PropTypes.number.isRequired,
-  media: PropTypes.string,
-  message: PropTypes.string.isRequired
-};

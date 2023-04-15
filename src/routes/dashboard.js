@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard';
 
 const PostPage = lazy(() => import('src/pages/post/index'));
-const FriendsPage = lazy(() => import('src/pages/friends/index'));
+const FriendsPage = lazy(() => import('src/pages/dashboard/friends/index'));
 
 
 const IndexPage = lazy(() => import('src/pages/dashboard/index'));

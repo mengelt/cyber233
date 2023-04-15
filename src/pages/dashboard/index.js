@@ -66,13 +66,10 @@ const Page = () => {
       axios.get('http://localhost:5000/feed', config)
         .then(feedResponse => {
 
-          console.info(feedResponse.data)
-          
           setPosts(feedResponse.data)
         })
 
     }
-
   }
 
   const handleToggleToken = () => {

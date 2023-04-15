@@ -91,7 +91,7 @@ export const CryptoWallet = (props) => {
             </SvgIcon>
           </IconButton>
         )}
-        subheader={formattedUsdValue}
+        subheader={''}
         sx={{ pb: 0 }}
         title={(
           <Typography
@@ -107,58 +107,12 @@ export const CryptoWallet = (props) => {
               {coinAmount}
             </Typography>
             {' '}
-            {currency}
+            
           </Typography>
         )}
       />
-      <Chart
-        height={140}
-        options={chartOptions}
-        series={chartSeries}
-        type="area"
-      />
-      <Box
-        sx={{
-          pb: 2,
-          px: 2
-        }}
-      >
-        <Stack
-          alignItems="center"
-          direction="row"
-          spacing={2}
-        >
-          <Box
-            component="img"
-            src={logo}
-            sx={{ flex: '0 0 auto' }}
-          />
-          <div>
-            <Typography variant="subtitle2">
-              {currency}/USD
-            </Typography>
-            <Stack
-              alignItems="center"
-              direction="row"
-              sx={{ color: rateColor }}
-              spacing={0.5}
-            >
-              <SvgIcon
-                color="inherit"
-                fontSize="small"
-              >
-                {rateIcon}
-              </SvgIcon>
-              <Typography
-                color="inherit"
-                variant="body2"
-              >
-                {rate}%
-              </Typography>
-            </Stack>
-          </div>
-        </Stack>
-      </Box>
+
+      <br />
     </Card>
   );
 };
