@@ -219,7 +219,7 @@ export const SideNav = (props) => {
               }
             }}
           >
-            BerkBook
+            OneSpace
           </Box>
         </Stack>
       </Box>

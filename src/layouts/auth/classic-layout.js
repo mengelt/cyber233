@@ -70,7 +70,7 @@ export const Layout = (props) => {
                   }
                 }}
               >
-                BerkBook
+                OneSpace
               </Box>
             </Stack>
           </Stack>

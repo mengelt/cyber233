@@ -56,15 +56,7 @@ export const useSections = () => {
               </SvgIcon>
             )
           },
-          {
-            title: t(tokens.nav.profile),
-            path: paths.dashboard.social.profile,
-            icon: (
-              <SvgIcon fontSize="small">
-                <HomeSmileIcon />
-              </SvgIcon>
-            )
-          }
+          
         ]
       },
 

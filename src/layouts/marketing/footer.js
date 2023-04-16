@@ -108,7 +108,7 @@ export const Footer = (props) => (
                   }
                 }}
               >
-                BerkBook
+                OneSpace
               </Box>
             </Stack>
             <Typography

@@ -34,7 +34,7 @@ export const TenantSwitch = (props) => {
                     }
                   }}
                 >
-                  BerkBook
+                  OneSpace
                 </Box>
           </Typography>
 

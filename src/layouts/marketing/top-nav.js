@@ -131,7 +131,7 @@ export const TopNav = (props) => {
                     }
                   }}
                 >
-                  BerkBook
+                  OneSpace
                 </Box>
               )}
             </Stack>

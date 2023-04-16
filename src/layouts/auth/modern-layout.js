@@ -50,7 +50,7 @@ export const Layout = (props) => {
             sx={{ mb: 1 }}
             variant="h4"
           >
-            Welcome to BerkBook
+            Welcome to OneSpace
           </Typography>
           <Typography
             color="text.secondary"
@@ -141,7 +141,7 @@ export const Layout = (props) => {
                   }
                 }}
               >
-                BerkBook
+                OneSpace
               </Box>
             </Stack>
           </Box>
